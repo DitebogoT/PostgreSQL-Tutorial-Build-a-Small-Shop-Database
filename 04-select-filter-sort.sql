@@ -190,8 +190,51 @@ FROM products
 WHERE price BETWEEN 20 AND 500;
 
 --5.7 Sort results with ORDER BY
+-- Sorting products starting with the most expensive
+SELECT product_name, price
+FROM products
+ORDER BY price DESC;
 
- 
+--sorting products by alphabetical order
+SELECT product_name, price
+FROM products
+ORDER BY product_name ASC;
+
+--sorting by stock quantity then price
+SELECT product_name, stock_quantity, price
+FROM products
+ORDER BY stock_quantity ASC, price DESC;
+
+
+--Checkpoint exercise
+-- Write queries to:
+
+--Display only customer names and emails.
+SELECT first_name, email
+FROM customers;
+
+
+--Find products costing more than R200.
+SELECT product_name, price
+FROM products
+WHERE price > 200;
+
+--Find orders with a status of PAID or SHIPPED.
+SELECT order_id,status
+FROM orders
+WHERE status IN ('PAID','SHIPPED');
+
+--Search for product names containing USB, regardless of letter case.
+SELECT product_name
+FROM products
+WHERE product_name LIKE '%USB%';
+
+--Display products from most expensive to least expensive.
+SELECT product_name, price
+FROM products
+ORDER BY price DESC;
+
+
 
 
 
